@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="PositionXtoTeleport" sid="1891398247611849" static="0" type="number">0</variable>
+        <variable constant="0" name="PositionYtoTeleport" sid="3228120147540596" static="0" type="number">0</variable>
+        <event-group description="" sid="2063954614271286" title="Player Movement &amp; Animation">
+            <sub-events>
+                <event-block any="1" sid="5832111995602329">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="9815050536055016" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="702464894339501" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="4261630456367801" type="Player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4294876545983946">
+                            <conditions>
+                                <condition id="7" name="Is mirrored" sid="8870557347863105" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="4867605057327935" type="Player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="9201249273235119">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="1120658553225656" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="4131854464677576" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="9635749244285125" type="Player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8206854175927923">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="1241277198613782" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="1309026909556813" type="Player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="9540337720606994">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="3426579425377377" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="2641946819026268" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1798125513603793">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="5942884603926191" type="Player">
+                                    <param id="0" name="Object">Ladder</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="3817427723908407" type="Player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="1703867050362193" type="Player">
+                                    <param id="0" name="Y">Player.Y - 5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9495532375904691">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8056584627961893" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="3201713701741083" type="Player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="4309408333574914" type="Player">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="5301160596995308">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="1788859354143178" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="670613733718121" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5738813418019712">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="6652782805881453" type="Player">
+                                    <param id="0" name="Object">Ladder</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="380445062495413" type="Player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="8486459909841389" type="Player">
+                                    <param id="0" name="Y">Player.Y + 5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="679827489259837">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="405433369865718" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="288168200537993" type="Player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3676644667794837">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Is playing" sid="1033017294850562" type="Player">
+                            <param id="0" name="Animation">&quot;Teleportando&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="1593101993626494">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="5332268453335169" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="9613301998476991" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="1881822155133386" type="Keyboard">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="6916535932652491" type="Keyboard">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="4386034641309199" type="Player">
+                                    <param id="0" name="Animation">&quot;Correndo&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7764577993502058">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="1079262469912697" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="3631153195518361" type="Player">
+                                    <param id="0" name="Animation">&quot;Desocupado&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1967718453075949">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="5012122772023112" type="Player">
+                            <param id="0" name="Animation">&quot;Teleportando&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="1267003364478575" type="Player">
+                            <param id="0" name="Animation">&quot;Desocupado&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="1705762179548864" title="Mouse Actions">
+            <sub-events>
+                <event-block sid="3140302709277003">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="9676762925076218" type="Mouse">
+                            <param id="0" name="Object">TeleportableItems</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set cursor style" sid="8536323735016869" type="Mouse">
+                            <param id="0" name="Cursor style">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8150958007066733">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="3874101863205615" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set cursor style" sid="4480862901727602" type="Mouse">
+                            <param id="0" name="Cursor style">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="376143353421658">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="8891354691829147" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">TeleportableItems</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="676397820014654">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="2843879599592535" type="System">
+                                    <param id="0" name="Object">TeleportableItems</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="5516636643608442" type="TeleportableItems">
+                                    <param id="0" name="Instance variable">selected</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3268162449326299">
+                            <conditions />
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="8070100871542858" type="TeleportableItems">
+                                    <param id="0" name="Instance variable">selected</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9085990580109125">
+                    <conditions>
+                        <condition id="0" name="On click" sid="7313637516225703" type="Mouse">
+                            <param id="0" name="Mouse button">2</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4060010823218395" type="System">
+                            <param id="0" name="Variable">PositionXtoTeleport</param>
+                            <param id="1" name="Value">Mouse.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1272986896434217" type="System">
+                            <param id="0" name="Variable">PositionYtoTeleport</param>
+                            <param id="1" name="Value">Mouse.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="630634742904778">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="7794833272396551" type="System">
+                                    <param id="0" name="Object">TeleportableItems</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5059529653190766">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="7830192601168149" type="TeleportableItems">
+                                            <param id="0" name="Instance variable">selected</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="5138638920908235" type="Player">
+                                            <param id="0" name="Animation">&quot;Teleportando&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="7299912215371078" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action behavior="Platform" id="11" name="Set enabled" sid="9268185811629753" type="Player">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="8330275658285477" type="TeleportableItems">
+                                            <param id="0" name="X">-100</param>
+                                            <param id="1" name="Y">-100</param>
+                                        </action>
+                                        <action behavior="Platform" id="11" name="Set enabled" sid="9721495324082268" type="Player">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="685722481501858" type="System">
+                                            <param id="0" name="Seconds">0.7</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="1483910319797171" type="TeleportableItems">
+                                            <param id="0" name="X">PositionXtoTeleport</param>
+                                            <param id="1" name="Y">PositionYtoTeleport</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="9012300381818051" type="TeleportableItems">
+                                            <param id="0" name="Instance variable">selected</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="7788179333100223" title="Automations">
+            <sub-events>
+                <event-block sid="5945014987046128">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="774256607953985" type="TeleportableItems">
+                            <param id="0" name="Instance variable">selected</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="7744346195679477" type="TeleportableItems">
+                            <param id="0" name="Mode">1</param>
+                            <param id="1" name="Effect">&quot;Warp&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7953749428667843">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="2123707853784977" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="3938401926554361" type="TeleportableItems">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;Warp&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6060166638072373">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="5284916013795458" type="Player">
+                            <param id="0" name="Object">Spikes</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="8602232641646199" type="System">
+                            <param id="0" name="Layout">Layout 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2476225708595397">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="7370665473940687" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="2121798809602516" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
